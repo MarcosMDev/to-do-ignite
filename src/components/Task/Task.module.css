@@ -1,0 +1,146 @@
+.task {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    
+    width: 100%;
+    height: 4.5rem;
+
+    border-radius: 8px;
+    padding: 1rem;
+
+    background-color: var(--gray-500);
+    color: var(--gray-100);
+
+    border: 1px solid var(--gray-300);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.task+.task {
+    margin-top: 12px;
+}
+
+.ContainerTrash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 24px;
+    height: 24px;
+
+    color: var(--gray-300);
+
+}
+
+.ContainerTrash button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    cursor: pointer;
+
+
+    background: transparent;
+
+    color: inherit;
+    font: inherit;
+
+    line-height: normal;
+
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    -webkit-appearance: none;
+}
+
+
+.ContainerTrash svg {
+    margin: 0;
+}
+
+.ContainerTrash:hover { 
+    background-color: var(--gray-400);
+    color: var(--danger);
+    border-radius: 4px;
+}
+
+.containerCheckbox {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.taskChecked {
+    text-decoration: line-through;
+    color: var(--gray-300);
+}
+
+.containerCheckbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.containerCheckbox:hover input ~ .checkmark {
+    background-color: var(--blue-dark);
+    opacity: 0.5;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1rem;
+    width: 1rem;
+    border: solid 2px var(--blue);
+    border-radius: 50%;
+}
+
+.containerCheckbox:hover input:checked ~ .checkmark {
+    background-color: var(--purple);
+    border: solid 2px var(--purple);
+}
+
+.containerCheckbox input:checked ~ .checkmark {
+    background-color: var(--purple-dark);
+    border: solid 2px var(--purple-dark);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+
+}
+
+.containerCheckbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.containerCheckbox .checkmark:after {
+    left: 35%;
+    right: 35%;
+    top: 20%;
+    bottom: 26%;
+    border: solid var(--gray-100);
+    border-width: 0 1px 1px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
